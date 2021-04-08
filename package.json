@@ -1,7 +1,7 @@
 {
-	"name": "@dopry/svelte-auth0",
+	"name": "@tmaxmax/svelte-auth0",
 	"version": "1.0.1",
-	"repository": "https://github.com/dopry/svelte-auth0",
+	"repository": "https://github.com/tmaxmax/svelte-auth0",
 	"description": "Svelte Auth0 Component Library",
 	"keywords": [
 		"svelte"
