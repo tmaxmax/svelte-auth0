@@ -2,7 +2,7 @@ import { SvelteComponentTyped } from 'svelte'
 import { Readable } from 'svelte/store'
 import Auth0Client from '@auth0/auth0-spa-js/dist/typings/Auth0Client'
 
-declare type Auth0ContextProps = {
+interface Auth0ContextProps {
   /**
    * The Auth0 domain.
    */
@@ -31,7 +31,7 @@ declare type Auth0ContextProps = {
 
 export class Auth0Context extends SvelteComponentTyped<Auth0ContextProps, {}, { default: {} }> {}
 
-declare type Auth0LoginButtonProps = {
+interface Auth0LoginButtonProps {
   /**
    * Additional HTML classes to apply to the underlying button.
    */
@@ -50,7 +50,7 @@ declare type Auth0LoginButtonProps = {
 
 export class Auth0LoginButton extends SvelteComponentTyped<Auth0LoginButtonProps, {}, { default: {} }> {}
 
-declare type Auth0LogoutButtonProps = {
+interface Auth0LogoutButtonProps {
   /**
    * Additional HTML classes to apply to the underlying button.
    */
