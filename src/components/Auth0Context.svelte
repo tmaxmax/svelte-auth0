@@ -1,5 +1,5 @@
 <script>
-	import createAuth0Client from '@auth0/auth0-spa-js';
+	import { createAuth0Client } from '@auth0/auth0-spa-js';
 	import { onMount, onDestroy, setContext } from 'svelte';
 	import {
 		AUTH0_CONTEXT_CALLBACK_URL,
@@ -33,7 +33,7 @@
 	let tokenRefreshIntervalId;
 
 	// getContext doesn't seem to return a value in OnMount, so we'll pass the auth0Promise around by reference.
-	let auth0Promise = createAuth0Client({ domain, client_id, audience });
+	let auth0Promise = createAuth0Client({ clientId: client_id, domain, authorizationParams: { audience } });
 	setContext(AUTH0_CONTEXT_CLIENT_PROMISE, auth0Promise);
 
 	async function handleOnMount() {
@@ -59,7 +59,9 @@
 					? `${appState.pathname}${appState.search}`
 					: '';
 			// redirect to the last page we were on when login was configured if it was passed.
-			history.replaceState({}, '', url);
+			if (url) {
+				history.replaceState({}, '', url);
+			}
 			// location.href = url;
 			// clear errors on login.
 			authError.set(null);

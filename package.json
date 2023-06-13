@@ -46,7 +46,7 @@
 	},
 	"svelte": "src/components/components.module.js",
 	"dependencies": {
-		"@auth0/auth0-spa-js": "1.6.2"
+		"@auth0/auth0-spa-js": "2.0.7"
 	},
 	"devDependencies": {
 		"@rollup/plugin-node-resolve": "7.0.0",
